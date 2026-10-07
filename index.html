@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generador de Texto de Prueba</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="page-wrapper">
+        <header class="main-header">
+            <h1>Generator</h1>
+            <p class="subtitle">Generadores para pruebas</p>
+        </header>
+
+        <main class="widgets-container">
+            <!-- Widget 1: Lorem Ipsum -->
+            <div class="widget-wrapper">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-file-alt"></i> Lorem Ipsum</h2>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="control-section">
+                            <div class="input-group">
+                                <label for="paragraphs">Párrafos:</label>
+                                <select id="paragraphs">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <button id="generateBtn" class="btn btn-primary">Generar</button>
+                        </div>
+
+                        <div class="output-section">
+                            <div class="textarea-wrapper">
+                                <textarea id="output" placeholder="El texto aparecerá aquí..." readonly></textarea>
+                                <div class="char-counter">0 caracteres</div>
+                            </div>
+                            <button id="copyBtn" class="btn btn-secondary" style="display: none;">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget 2: Email Generator -->
+            <div class="widget-wrapper">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-envelope"></i> Email Generator</h2>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="control-section">
+                            <div class="input-group">
+                                <label for="emailCount">Emails:</label>
+                                <select id="emailCount">
+                                    <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3" selected>3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="10">10</option>
+                                </select>
+                            </div>
+                            <button id="generateEmailBtn" class="btn btn-primary">Generar</button>
+                        </div>
+
+                        <div class="output-section">
+                            <div class="textarea-wrapper">
+                                <textarea id="emailOutput" placeholder="Los emails aparecerán aquí..." readonly></textarea>
+                                <div class="char-counter email-counter">0 caracteres</div>
+                            </div>
+                            <button id="copyEmailBtn" class="btn btn-secondary" style="display: none;">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Widget 3: Password Generator -->
+            <div class="widget-wrapper">
+                <div class="widget">
+                    <div class="widget-header">
+                        <h2><i class="fas fa-lock"></i> Password Generator</h2>
+                    </div>
+
+                    <div class="widget-content">
+                        <div class="control-section">
+                            <div class="input-group">
+                                <label for="passwordLength">Longitud: <span id="lengthValue">12</span> caracteres</label>
+                                <input type="range" id="passwordLength" min="4" max="20" value="12" class="slider">
+                            </div>
+
+                            <div class="password-options">
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="passwordUppercase" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Mayúsculas</span>
+                                </label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="passwordLowercase" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Minúsculas</span>
+                                </label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="passwordNumbers" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Números</span>
+                                </label>
+                                <label class="toggle-switch">
+                                    <input type="checkbox" id="passwordSymbols" checked>
+                                    <span class="toggle-slider"></span>
+                                    <span class="toggle-label">Símbolos</span>
+                                </label>
+                            </div>
+
+                            <button id="generatePasswordBtn" class="btn btn-primary">Generar</button>
+                        </div>
+
+                        <div class="output-section">
+                            <div class="textarea-wrapper">
+                                <textarea id="passwordOutput" placeholder="La contraseña aparecerá aquí..." readonly></textarea>
+                                <div class="char-counter password-counter">0 caracteres</div>
+                            </div>
+                            <div class="security-bar">
+                                <div class="security-fill" id="securityFill"></div>
+                            </div>
+                            <p class="security-text" id="securityText">Seguridad: -</p>
+                            <button id="copyPasswordBtn" class="btn btn-secondary" style="display: none;">Copiar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <div id="notification" class="notification"></div>
+    <script src="script.js"></script>
+</body>
+</html>
